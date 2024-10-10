@@ -26,7 +26,7 @@ public class EncodingMain1 {
     }
 
     private static void encoding(String text, Charset charset) {
-        byte[] bytes = text.getBytes(charset);
+        byte[] bytes = text.getBytes(charset); // encoding
         System.out.printf("%s -> [%s] 인코딩 -> %s %sbyte\n", text, charset, Arrays.toString(bytes), bytes.length);
     }
 }
