@@ -8,8 +8,8 @@ public class CreateFileV2 {
 
     public static void main(String[] args) throws IOException {
         FileOutputStream fos = new FileOutputStream(BufferedConst.FILE_NAME);
-
         long startTime = System.currentTimeMillis();
+
         byte[] buffer = new byte[BufferedConst.BUFFER_SIZE]; // 한번에 8KB씩 전달 ( 데이터를 buffer 라는 byte[]에 담기 위함. ) | 참고. 데이터를 모아서 전달하거나, 모아서 전달받는 용도로 사용하는 것을 버퍼라 한다
         int bufferIndex = 0;
 
@@ -30,8 +30,8 @@ public class CreateFileV2 {
         }
 
         fos.close();
-        long endTime = System.currentTimeMillis();
 
+        long endTime = System.currentTimeMillis();
         System.out.println("File created: " + BufferedConst.FILE_NAME);
         System.out.println("File size: " + BufferedConst.FILE_SIZE / 1024 / 1024 + "MB");
         System.out.println("Time taken: " + (endTime - startTime) + "ms"); // 35ms => 0.035초가 걸린것이다.

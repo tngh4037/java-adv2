@@ -8,8 +8,8 @@ public class CreateFileV1 {
 
     public static void main(String[] args) throws IOException {
         FileOutputStream fos = new FileOutputStream(BufferedConst.FILE_NAME);
-
         long startTime = System.currentTimeMillis();
+
         for (int i = 0; i < BufferedConst.FILE_SIZE; i++) { // 10MB 크기의 파일 생성
             fos.write(1);
         }

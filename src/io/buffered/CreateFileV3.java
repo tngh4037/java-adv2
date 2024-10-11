@@ -11,8 +11,8 @@ public class CreateFileV3 {
     public static void main(String[] args) throws IOException {
         FileOutputStream fos = new FileOutputStream(BufferedConst.FILE_NAME);
         BufferedOutputStream bos = new BufferedOutputStream(fos, BufferedConst.BUFFER_SIZE); // 두 번째 인자로 버퍼 사이즈를 지정한다. ( default: DEFAULT_MAX_BUFFER_SIZE = 8192; -> 기본 사이즈는 자바 버전마다 달라질 수 있다. )
-
         long startTime = System.currentTimeMillis();
+
         for (int i = 0; i < BufferedConst.FILE_SIZE; i++) {
             bos.write(1);
         }
