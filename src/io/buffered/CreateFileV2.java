@@ -3,6 +3,7 @@ package io.buffered;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+// 버퍼 활용 (버퍼를 직접 다루는 방식)
 public class CreateFileV2 {
 
     public static void main(String[] args) throws IOException {

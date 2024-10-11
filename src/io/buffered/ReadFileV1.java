@@ -3,6 +3,7 @@ package io.buffered;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+// 하나씩 읽기
 public class ReadFileV1 {
 
     public static void main(String[] args) throws IOException {

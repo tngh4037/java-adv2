@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+// BufferedXxx 사용
 // BufferedOutputStream 은 버퍼 기능을 내부에서 대신 처리해준다. ( 따라서 단순한 코드를 유지하면서 버퍼를 사용하는 이점도 함께 누릴 수 있다. )
 public class CreateFileV3 {
 

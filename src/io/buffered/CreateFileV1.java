@@ -3,6 +3,7 @@ package io.buffered;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+// 하나씩 쓰기
 public class CreateFileV1 {
 
     public static void main(String[] args) throws IOException {
