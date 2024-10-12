@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+// [ 문자 다루기 ]
+// 스트림의 모든 데이터는 byte 단위를 사용한다.  따라서 byte 가 아닌 문자를 스트림에 직접 전달할 수는 없다.
+// 예를 들어서 String 문자를 스트림을 통해 파일에 저장하려면 String 을 byte 로 변환한 다음에 저장해야 한다.
 public class ReaderWriterMainV1 {
 
     public static void main(String[] args) throws IOException {
@@ -32,3 +35,5 @@ public class ReaderWriterMainV1 {
         System.out.println("read String: " + readString);
     }
 }
+
+// 개발자가 번거롭게 위와 같은 변환 과정을 직접하지 않고, 번거로운 변환 과정을 누군가 대신 처리해주면 더 편리하지 않을까? ( ReaderWriterMainV2 )
