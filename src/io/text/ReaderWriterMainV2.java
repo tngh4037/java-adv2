@@ -4,8 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-// [ 문자 다루기 ]
-
+// [ 문자 다루기 ] - OutputStreamWriter / InputStreamReader
 public class ReaderWriterMainV2 {
 
     public static void main(String[] args) throws IOException {
@@ -26,7 +25,7 @@ public class ReaderWriterMainV2 {
 
         StringBuilder content = new StringBuilder();
         int ch;
-        while ((ch = isr.read()) != -1) { // 참고) isr.read()는 char 를 반환한다. ( 실제 반환 타입은 int 형이므로 char 형으로 캐스팅해서 사용하면 된다. ( 자바의 char 형은 파일의 끝인 -1 을 표현할 수 없으므로 대신 int 를 반환한다. ) )
+        while ((ch = isr.read()) != -1) { // 참고) isr.read()는 char 를 반환한다. ( 실제 반환 타입은 int 형이므로 char 형으로 캐스팅해서 사용하면 된다. ( 실제 반환 타입이 int인 이유? 자바의 char 형은 파일의 끝인 -1 을 표현할 수 없으므로 대신 int 를 반환한다. 따라서 char 가 반환된다고 생각하자. (물론 캐스팅이 필요할 수 있지만) ) )
             content.append((char) ch);
         }
         isr.close();
