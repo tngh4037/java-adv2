@@ -8,7 +8,7 @@ public class DataStreamEtcMain {
         FileOutputStream fos = new FileOutputStream("temp/data.dat");
         DataOutputStream dos = new DataOutputStream(fos);
 
-        dos.writeUTF("회원A"); // UTF-8 형식으로 인코딩해서 해당 데이터를 내보냄
+        dos.writeUTF("회원A"); // UTF-8 형식으로 인코딩해서 해당 데이터를 내보냄 ( String은 writeUTF로 해주어야 한다. )
         dos.writeInt(20); // 자바의 int 로 저장 (4byte)
         dos.writeDouble(10.5); // 자바의 double 로 저장 (8byte)
         dos.writeBoolean(true); // 자바의 double 로 저장 (1byte)
