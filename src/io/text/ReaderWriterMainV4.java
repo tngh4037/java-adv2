@@ -25,7 +25,7 @@ public class ReaderWriterMainV4 {
         BufferedReader br = new BufferedReader(fr, BUFFER_SIZE);
 
         String line;
-        while ((line = br.readLine()) != null) { // 파일의 끝(EOF)에 도달하면 null 을 반환한다. ( 반환 타입이 String 이기 때문에 EOF를 -1로 표현할 수 없다. 대신에 null 을 반환한다. )
+        while ((line = br.readLine()) != null) { // 한 줄씩 읽어들임. 파일의 끝(EOF)에 도달하면 null 을 반환한다. ( 반환 타입이 String 이기 때문에 EOF를 -1로 표현할 수 없다. 대신에 null 을 반환한다. )
             content.append(line).append("\n"); // 참고) readLine() 을 통해 라인 단위로 읽으면 라인 자체는 제거된다. 따라서 이를 구분해서 보거나 작업하려면 라인구분자를 넣어주어야 한다.
         }
         br.close();
