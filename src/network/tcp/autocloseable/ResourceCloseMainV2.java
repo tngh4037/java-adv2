@@ -41,6 +41,9 @@ public class ResourceCloseMainV2 {
 // 문제점)
 // 1) 자원 정리중에 예외가 발생하는 문제: 자원을 정리하다가 특정 자원 정리에서 예외 발생시, 그 밑의 자원들은 호출되지 않음. ( resource1.closeEx();은 호출X )
 // 2) 핵심 예외가 바뀌는 문제: resource2.callEx(); 에 의해 CallException 이 발생했지만, finally 구문에서 CloseException 이 발생했다.
-//   ㄴ 그러면 바깥으로 CallException 이 아닌, CloseException 이 던져진다.
+//   ㄴ 그러면 바깥으로 CallException(핵심예외) 이 아닌, CloseException(부가예외) 이 던져진다.
 //   ㄴ 개발자에게 중요한 예외는 핵심 예외다. ( CallException 발생시 catch 문에서 환불처리 로직을 넣어놨는데,,, CallException 가 발생했음에도, 예외가 전환되어 문제가 발생할 수 있다. )
+//
+// 해결)
+// - 자원 정리의 코드에서 try-catch를 사용해서 자원 정리 중에 발생하는 예외를 잡아서 처리해보자. ( finally 블럭에서 각각의 자원을 닫을 때도, 예외가 발생하면 예외를 잡아서 처리하도록 하자. )
 //
