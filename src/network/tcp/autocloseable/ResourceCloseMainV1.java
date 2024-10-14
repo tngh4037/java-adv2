@@ -26,3 +26,9 @@ public class ResourceCloseMainV1 {
         resource1.closeEx();
     }
 }
+
+// 문제점)
+// 로직에서 예외 발생시 자원 정리 구문이 호출되지 않음. ( 예외가 발생하면 자원이 정리되지 않는다. )
+
+// 해결)
+// finally 코드 블록을 사용해서 자원을 닫는 코드가 항상 호출되도록 하자.
