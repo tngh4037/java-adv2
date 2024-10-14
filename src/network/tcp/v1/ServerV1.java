@@ -17,7 +17,7 @@ public class ServerV1 {
         ServerSocket serverSocket = new ServerSocket(PORT); // 서버는 ServerSocket(Java에서 서버 측 소켓을 생성하는 클래스) 라는 특별한 소켓이 필요하다. ( new ServerSocket(PORT); 를 통해 12345번 포트로 서버가 뜬다. ( 서버가 12345 포트로 서버 소켓을 열어둔다. 클라이언트는 이제 12345 포트로 서버에 접속할 수 있다. ) )
         log("서버 소켓 시작 - 리스닝 포트: " + PORT);
 
-        Socket socket = serverSocket.accept(); // 클라이언트와의 통신을 위한 (해당 클라이언트의 접속 정보를 기반으로) 소켓을 생성해준다. ( 이 소켓을 통해서 클라이언트와 서버가 통신. )
+        Socket socket = serverSocket.accept(); // 클라이언트와의 통신을 위한 (해당 클라이언트의 접속 정보를 기반으로) 소켓을 생성해준다. ( 이 소켓을 통해서 클라이언트와 서버가 통신. ) | 참고) 블로킹
         log("소켓 연결: " + socket);
 
         DataInputStream input = new DataInputStream(socket.getInputStream());
@@ -43,3 +43,7 @@ public class ServerV1 {
 
 // 참고) 통신을 할 떄는 클라이언트도 소켓을 가지고 있고, 서버도 소캣을 가지고 있어야 한다.
 //   ㄴ 클라이언트와 서버간의 통신은 소켓을 통해서 이루어진다.
+
+// 참고) 서버 소켓은 연결만 담당한다. 연결 이후에 서로 메시지를 주고 받으러면 소켓 객체가 필요하다.
+
+// 참고) accept() 메서드는 backlog 큐에 새로운 연결 정보가 도착할 때 까지 블로킹 상태로 대기한다. 새로운 연결 정보가 오지 않으면 계속 대기하는 블로킹 메서드이다.

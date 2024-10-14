@@ -25,7 +25,7 @@ public class ClientV2 {
             System.out.print("전송 문자: ");
 
             // 서버에게 문자 보내기
-            String toSend = scanner.next();
+            String toSend = scanner.nextLine();
             output.writeUTF(toSend);
             log("client -> server: " + toSend);
 

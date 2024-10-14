@@ -28,7 +28,7 @@ public class ClientV1 {
         log("client -> server: " + toSend);
 
         // 서버로부터 문자 받기
-        String received = input.readUTF(); // 참고) 안오면 대기한다.
+        String received = input.readUTF(); // 참고) 안오면 대기한다. (블로킹)
         log("client <- server: " + received);
 
         // 자원 정리
