@@ -55,6 +55,6 @@ public class ResourceCloseMainV3 {
 // - 개발자가 실수로 close() 를 호출하지 않을 가능성
 // - 개발자가 close() 호출 순서를 실수, 보통 자원을 생성한 순서와 반대로 닫아야 함
 //
-// 보완)
+// 아쉬운 부분 보완)
 // - 자원 정리 때문에 고통 받는 이런 문제를 한번에 해결하는 것 => try-with-resources 구문
 //
