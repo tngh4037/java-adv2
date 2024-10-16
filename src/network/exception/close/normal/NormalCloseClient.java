@@ -6,7 +6,7 @@ import java.net.Socket;
 import static util.MyLogger.log;
 
 // TCP/IP 에서 연결을 "정상적으로 종료"하려면,
-// (서버 <-> 클라이언트) 둘 다 FIN 패킷을 주고 받아야 한다.
+// (서버 <-> 클라이언트) 둘 다 FIN 패킷을 주고 받아야 한다. ( TCP/IP 규칙: FIN을 받으면, 나도 FIN을 보내야 한다. (FIN 말고 다른 메시지를 전송하는 것은 TCP/IP 규약에 어긋나는 것이다.) )
 public class NormalCloseClient {
 
     public static void main(String[] args) throws IOException {

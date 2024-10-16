@@ -29,7 +29,7 @@ public class ClientV6 {
 
                 // 서버에게 문자 보내기
                 String toSend = scanner.nextLine();
-                output.writeUTF(toSend); // 참고) 서버를 먼저 종료하고, 입력하면 java.net.SocketException: 현재 연결은 사용자의 호스트 시스템의 소프트웨어의 의해 중단되었습니다. 예외 발생
+                output.writeUTF(toSend);
                 log("client -> server: " + toSend);
 
                 if (toSend.equals("exit")) {
