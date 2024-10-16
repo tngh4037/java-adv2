@@ -14,7 +14,7 @@ public class ServerV1 {
 
     public static void main(String[] args) throws IOException {
         log("서버 시작");
-        ServerSocket serverSocket = new ServerSocket(PORT); // 서버는 ServerSocket(Java에서 서버 측 소켓을 생성하는 클래스) 라는 특별한 소켓이 필요하다. ( new ServerSocket(PORT); 를 통해 12345번 포트로 서버가 뜬다. ( 서버가 12345 포트로 서버 소켓을 열어둔다. 클라이언트는 이제 12345 포트로 서버에 접속할 수 있다. ) )
+        ServerSocket serverSocket = new ServerSocket(PORT); // 서버는 ServerSocket(Java에서 서버 측 소켓을 생성하는 클래스) 라는 특별한 소켓이 필요하다. ( new ServerSocket(PORT); 를 통해 12345번 포트로 서버가 뜬다. ( 서버가 12345 포트로 서버 소켓을 열어둔다. 클라이언트는 이제 12345 포트로 서버에 접속할 수 있다. ) )  ||  ServerSocket 은 주로 연결을 담당한다.
         log("서버 소켓 시작 - 리스닝 포트: " + PORT);
 
         Socket socket = serverSocket.accept(); // 클라이언트와의 통신을 위한 (해당 클라이언트의 접속 정보를 기반으로) 소켓을 생성해준다. ( 이 소켓을 통해서 클라이언트와 서버가 통신. ) | 참고) 블로킹

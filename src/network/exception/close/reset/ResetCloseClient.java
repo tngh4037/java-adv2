@@ -46,3 +46,13 @@ public class ResetCloseClient {
 }
 
 // RST 패킷이 도착했다는 것은 현재 TCP 연결에 심각한 문제가 있으므로 해당 연결을 더는 사용하면 안된다는 의미이다.
+//
+// 참고)
+// 1) 서버로부터 FIN 패킷을 받고, 클라이언트가 아래와 같이 read()만 호출했다면, 예외는 발생하지 않는 것 같다.
+// - read() (EOF) -> write() (RST 패킷 수신) -> read() (EOF) -> read() (EOF) -> read() * n (EOF)
+// 2) 서버로부터 FIN 패킷을 받고, 클라이언트가 아래와 같이 read()를 호출하다가, write()를 호출하면 예외가 발생한다.
+// - read() (EOF) -> write() (RST 패킷 수신) -> read() (EOF) -> read() (EOF) -> read() * n (EOF) -> write()
+// 2) 서버로부터 FIN 패킷을 받고, 클라이언트가 아래와 같이 호출했다면, 예외가 발생한다.
+// - write() (RST 패킷 수신) -> read() ( SocketException: Connection reset )
+// - write() (RST 패킷 수신) -> write() ( SocketException: Broken pipe )
+//
