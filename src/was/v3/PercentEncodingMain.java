@@ -17,8 +17,11 @@ public class PercentEncodingMain {
         String encoded2 = URLEncoder.encode("가", StandardCharsets.UTF_8);
         System.out.println("encoded2 = " + encoded2); // %EA%B0%80
 
-        String decode = URLDecoder.decode(encoded2, StandardCharsets.UTF_8);
-        System.out.println("decode = " + decode); // 가
+        String decode1 = URLDecoder.decode("a", StandardCharsets.UTF_8);
+        System.out.println("decode1 = " + decode1); // a ( a는 인코딩되지 않은 문자열이므로, 디코딩할 필요가 없다. 이 경우 결과는 입력값 그대로 반환된다. ) | 디코딩은 인코딩된 데이터(예: %20, %3F 등)를 원래의 문자로 변환하는 과정이기 때문에, 인코딩되지 않은 문자열은 변환 없이 그대로 반환된다.
+
+        String decode2 = URLDecoder.decode(encoded2, StandardCharsets.UTF_8);
+        System.out.println("decode2 = " + decode2); // 가
     }
 }
 
