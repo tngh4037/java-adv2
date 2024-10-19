@@ -82,7 +82,7 @@ public class HttpServerV1 {
         System.out.println(sb);
 
         writer.println(sb);
-        writer.flush(); // PrintWriter 생성 시, autoFlush 를 false 로 했기에, 자동으로 flush 되지 않는다. 따라서 flush() 를 해줘야 전송된다.
+        writer.flush(); // PrintWriter 생성 시, autoFlush 를 false 로 했기에, 자동으로 flush 되지 않는다. 따라서 flush() 를 해줘야 전송된다. ( 직접 안해주면 연결이 끊길 때쯤 나중에야 호출된다. )
     }
 
     private static void sleep(int millis) {
